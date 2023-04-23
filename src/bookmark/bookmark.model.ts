@@ -1,5 +1,5 @@
 export interface Bookmark {
-  id: number,
+  bookmarkId: number,
   prayerRequestId: number,
   userId: number,
   createdAt: Date

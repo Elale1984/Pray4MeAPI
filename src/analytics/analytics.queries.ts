@@ -30,7 +30,7 @@ export const analyticsQueries = {
     `,
   deleteAnalytics: `
     DELETE FROM Analytics
-    WHERE userId = ?;
+    WHERE ID = ?;
     `,
   updateAnalytics: `
     UPDATE pray4me.analytics
@@ -38,6 +38,6 @@ export const analyticsQueries = {
       prayerRequestCount = ?,
       prayerCount = ?,
       answeredCount = ?
-    WHERE userId = ?;
+    WHERE ID = ?;
     `,
 }

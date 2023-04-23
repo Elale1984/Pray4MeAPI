@@ -1,5 +1,5 @@
 export interface PrayerRequestComment {
-  id: number,
+  prayerRequestCommentId: number,
   prayerRequestId: number,
   userId: number,
   text: string,

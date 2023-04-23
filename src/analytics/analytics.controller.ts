@@ -26,6 +26,7 @@ export const readAnalytics: RequestHandler = async (req: Request, res: Response)
     }
 };
 
+
 export const createAnalytics: RequestHandler = async (req: Request, res: Response) => {
     try {
         const okPacket: OkPacket = await AnalyticsDao.createAnalytics(req.body);
@@ -45,6 +46,7 @@ export const createAnalytics: RequestHandler = async (req: Request, res: Respons
 
   export const updateAnalytics: RequestHandler = async (req: Request, res: Response) => {
     try {
+
         const okPacket: OkPacket = await AnalyticsDao.updateAnalytics(req.body);
         console.log('req.body', req.body);
         console.log('analytics', okPacket);
@@ -62,22 +64,22 @@ export const createAnalytics: RequestHandler = async (req: Request, res: Respons
      
 export const deleteAnalytics: RequestHandler = async (req:Request, res: Response) => {
     try {
-        let userId = parseInt(req.params.userId as string);
-        console.log('userId', userId);
+        let analyticsId = parseInt(req.params.analyticsId as string);
+        console.log('analyticsId', analyticsId);
 
-        if(!Number.isNaN(userId)) {
-            const response = await AnalyticsDao.deleteAnalytics(userId);
+        if(!Number.isNaN(analyticsId)) {
+            const response = await AnalyticsDao.deleteAnalytics(analyticsId);
 
             res.status(200).json(
                 response
             );
         } else {
-            throw new Error("Integer expected for userId");
+            throw new Error("Integer expected for analyticsId");
         }
     } catch (error) {
         console.error('[analytics.controller][deleteAnalytics][Error]');
         res.status(500).json({
-            message: 'There was an error deleting analytic with that userid'
+            message: 'There was an error deleting analytic with that analyticsId'
         });
     }
 };

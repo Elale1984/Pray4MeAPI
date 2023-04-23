@@ -1,5 +1,5 @@
 export interface Analytics {
-  id: number,
+  analyticsId: number,
   userId: number,
   prayerRequestCount: number,
   prayerCount: number,

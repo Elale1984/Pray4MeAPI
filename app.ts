@@ -4,7 +4,8 @@ import cors from 'cors';
 import helmet from 'helmet';
 import logger from './src/middleware/logger.middleware';
 import analyticsRouter from './src/analytics/analytics.routs';
-
+import prayerRequestRouter from './src/prayer-requests/prayer-requests.routs';
+import prayerRequestCommentsRouter from './src/prayer-request-comment/prayer-request-comments.routs';
 
 dotenv.config();
 
@@ -26,7 +27,7 @@ app.get('/', (req: Request, res: Response) => {
     res.send('Pray4Me');
 });
 
-app.use('/', [analyticsRouter]);
+app.use('/', [analyticsRouter, prayerRequestRouter, prayerRequestCommentsRouter]);
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 });
