@@ -18,13 +18,13 @@ export const prayerRequestsQueries = {
     FROM pray4me.prayerrequests
     WHERE userId = ?;
   `,
-  readPrayerRequestById: `
+  readPrayerRequestFromId: `
     SELECT
-      id AS prayerRequestId,
-      userId AS userId,
-      text AS text,
-      createdAt AS createdAt,
-      isAnswered AS isAnswered
+      ID AS prayerRequestId,
+      UserID AS userId,
+      Text AS text,
+      CreatedAt AS createdAt,
+      IsAnswered AS isAnswered
     FROM pray4me.prayerrequests
     WHERE ID = ?;
   `,

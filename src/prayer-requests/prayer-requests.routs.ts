@@ -3,22 +3,22 @@ import * as PrayerRequestController from './prayer-requests.controller';
 
 const router = Router();
 
-// GET /analytics
+// GET // POST /prayer-requests
 router.get('/prayer-requests', PrayerRequestController.readPrayerRequests);
 
 // GET /prayer-requests/:userId
 router.get('/prayer-requests/:userId', PrayerRequestController.readPrayerRequests);
 
-// GET /prayer-requests/:prayerRequestId
-router.get('/prayer-requests/:prayerRequestId', PrayerRequestController.readPrayerRequestById);
+// GET /prayer-request/:prayerRequestId
+router.get('/prayer-requests/:prayerRequestId', PrayerRequestController.readPrayerRequestFromId);
 
-// POST /analytics
+// POST /prayer-requests
 router.post('/prayer-requests', PrayerRequestController.createPrayerRequest);
 
-// PUT /analytics
+// PUT /prayer-requests
 router.put('/prayer-requests', PrayerRequestController.updatePrayerRequest);
 
-// DELETE /analytics/:userId
+// DELETE /prayer-requests/:prayerRequestId
 router.delete('/prayer-requests/:prayerRequestId', PrayerRequestController.deletePrayerRequest);
 
 export default router;

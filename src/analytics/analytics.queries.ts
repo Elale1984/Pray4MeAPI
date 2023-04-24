@@ -29,7 +29,7 @@ export const analyticsQueries = {
     )
     `,
   deleteAnalytics: `
-    DELETE FROM Analytics
+    DELETE FROM pray4me.analytics
     WHERE ID = ?;
     `,
   updateAnalytics: `

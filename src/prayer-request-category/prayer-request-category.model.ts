@@ -1,5 +1,5 @@
 export interface PrayerRequestCategory {
-    id: number,
+    prayerRequestCategoryId: number,
     prayerRequestId: number,
     categoryId: number
-  }
+}

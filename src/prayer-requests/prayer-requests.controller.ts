@@ -29,27 +29,23 @@ export const readPrayerRequests: RequestHandler = async (req: Request, res: Resp
     }
 };
 
-export const readPrayerRequestById: RequestHandler = async (req: Request, res: Response) => {
+export const readPrayerRequestFromId: RequestHandler = async (req: Request, res: Response) => {
     console.log("Trying to read prayer request by id");
     try {
-        let prayerRequest;
-        let prayerRequestId = parseInt(req.query.id as string);
+        let prayerRequestFromId;
+        let prayerRequestId = parseInt(req.query.prayerRequestId as string);
 
         console.log('prayerRequestId', prayerRequestId);
-        if (!Number.isNaN(prayerRequestId)) {
-            prayerRequest = await PrayerRequestDao.readPrayerRequests();
-        } else {
-            console.log("reading");
-            prayerRequest = await PrayerRequestDao.readPrayerRequestById(prayerRequestId);
-        }
+        prayerRequestFromId = await PrayerRequestDao.readPrayerRequestFromId(prayerRequestId);
+
         res.status(200).json(
-            prayerRequest
+            prayerRequestFromId
         );
 
     } catch (error) {
         console.error('[prayerRequest.controller][readPrayerRequestsById][Error] ', error);
         res.status(500).json({
-            message: 'There was an error when fetching prayerRequests'
+            message: 'There was an error when fetching prayerRequests by prayerRequestId'
         });
     }
 };

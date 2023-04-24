@@ -11,8 +11,8 @@ export const readPrayerRequestsByUserId = async (userId: number) => {
     return execute<PrayerRequests[]>(prayerRequestsQueries.readPrayerRequestsByUserId, [userId]);
 };
 
-export const readPrayerRequestById = async (prayerRequestId: number) => {
-    return execute<PrayerRequests[]>(prayerRequestsQueries.readPrayerRequestById, [prayerRequestId]);
+export const readPrayerRequestFromId = async (prayerRequestId: number) => {
+    return execute<PrayerRequests[]>(prayerRequestsQueries.readPrayerRequestFromId, [prayerRequestId]);
 };
 
 export const createPrayerRequest = async (prayerRequest: PrayerRequests) => {

@@ -12,7 +12,7 @@ router.get('/prayer-request-comments/:prayerRequestCommentId', PrayerRequestComm
 // POST /prayer-request-comments
 router.post('/prayer-request-comments', PrayerRequestCommentController.createPrayerRequestComment);
 
-// DELETE /prayer-request-comments/:userId
+// DELETE /prayer-request-comments/:prayerRequestCommentId
 router.delete('/prayer-request-comments/:prayerRequestCommentId', PrayerRequestCommentController.deletePrayerRequestComment);
 
 // PUT /prayer-request-comments

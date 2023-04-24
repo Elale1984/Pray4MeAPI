@@ -1,5 +1,5 @@
 export interface Notification {
-  id: number,
+  notificationId: number,
   prayerRequestId: number,
   userId: number,
   text: string,

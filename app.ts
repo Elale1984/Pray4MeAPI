@@ -6,6 +6,10 @@ import logger from './src/middleware/logger.middleware';
 import analyticsRouter from './src/analytics/analytics.routs';
 import prayerRequestRouter from './src/prayer-requests/prayer-requests.routs';
 import prayerRequestCommentsRouter from './src/prayer-request-comment/prayer-request-comments.routs';
+import bookmarkRouter from './src/bookmark/bookmarks.routs';
+import notificationsRouter from './src/notifications/notifications.routs'
+import prayerRequestCategoryRouter from './src/prayer-request-category/prayer-request-category.routs'
+import categoriesRouter from './src/categories/categories.routs'
 
 dotenv.config();
 
@@ -27,7 +31,9 @@ app.get('/', (req: Request, res: Response) => {
     res.send('Pray4Me');
 });
 
-app.use('/', [analyticsRouter, prayerRequestRouter, prayerRequestCommentsRouter]);
+app.use('/', [analyticsRouter, prayerRequestRouter, 
+    prayerRequestCommentsRouter, bookmarkRouter, 
+        notificationsRouter, prayerRequestCategoryRouter, categoriesRouter]);
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 });
