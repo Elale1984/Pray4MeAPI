@@ -3,6 +3,8 @@
         "prayerrequestcategory",
         "prayerrequestcomment",
         "prayerrequests",
-        "uuidv"
+        "uuidv",
+        "editor.bracketPairColorization.enabled": true,
+        "editor.guides.bracketPairs":"active"
     ]
 }

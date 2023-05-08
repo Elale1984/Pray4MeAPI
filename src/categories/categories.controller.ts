@@ -61,7 +61,7 @@ export const createCategories: RequestHandler = async (req: Request, res: Respon
         });
     }
 };
-     
+
 export const deleteCategories: RequestHandler = async (req:Request, res: Response) => {
     try {
         let categoryId = parseInt(req.params.categoryId as string);

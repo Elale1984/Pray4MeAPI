@@ -10,6 +10,7 @@ import bookmarkRouter from './src/bookmark/bookmarks.routs';
 import notificationsRouter from './src/notifications/notifications.routs'
 import prayerRequestCategoryRouter from './src/prayer-request-category/prayer-request-category.routs'
 import categoriesRouter from './src/categories/categories.routs'
+import usersRouter from './src/core/user.routs';
 
 dotenv.config();
 
@@ -19,7 +20,7 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(helmet());
+//app.use(helmet());
 
 if (process.env.NODE_ENV == 'development') {
     app.use(logger);
@@ -33,7 +34,7 @@ app.get('/', (req: Request, res: Response) => {
 
 app.use('/', [analyticsRouter, prayerRequestRouter, 
     prayerRequestCommentsRouter, bookmarkRouter, 
-        notificationsRouter, prayerRequestCategoryRouter, categoriesRouter]);
+        notificationsRouter, prayerRequestCategoryRouter, categoriesRouter, usersRouter]);
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 });
