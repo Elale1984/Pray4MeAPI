@@ -39,4 +39,34 @@ export const prayerRequestCommentsQueries = {
       createdAt = ?
     WHERE ID = ?;
     `,
+  readPrayerRequestCommentsByPrayerRequestId: `
+    SELECT
+      id AS prayerRequestCommentId,
+      prayerRequestID as prayerRequestID,
+      userId AS userId,
+      text AS text,
+      createdAt AS createdAt
+    FROM pray4me.prayerrequestcomment
+    WHERE prayerRequestID= ?;
+  `,
+  readPrayerRequestCommentsByPrayerRequestIdAndUserId: `
+  SELECT
+    prayerRequestCommentId AS prayerRequestCommentId,
+    prayerRequestId AS prayerRequestId,
+    userId AS userId,
+    text AS text,
+    createdAt AS createdAt
+  FROM pray4me.prayerrequestcomment
+  WHERE prayerRequestId =? AND userId =?;
+  `,
+  readPrayerRequestCommentsByUserId: `
+  SELECT
+    prayerRequestCommentId AS prayerRequestCommentId,
+    prayerRequestId AS prayerRequestId,
+    userId AS userId,
+    text AS text,
+    createdAt AS createdAt
+  FROM pray4me.prayerrequestcomment 
+    
+  `,
 };

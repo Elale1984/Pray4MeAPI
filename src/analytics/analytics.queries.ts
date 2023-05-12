@@ -19,7 +19,7 @@ export const analyticsQueries = {
     WHERE userId = ?;
     `,
   createAnalytics: `
-    INSERT INTO Analytics (
+    INSERT INTO pray4me.analytics (
       userId,
       prayerRequestCount,
       prayerCount,

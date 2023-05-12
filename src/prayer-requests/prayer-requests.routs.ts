@@ -15,8 +15,8 @@ router.get('/prayer-requests/:prayerRequestId', PrayerRequestController.readPray
 // POST /prayer-requests
 router.post('/prayer-requests', PrayerRequestController.createPrayerRequest);
 
-// PUT /prayer-requests
-router.put('/prayer-requests', PrayerRequestController.updatePrayerRequest);
+// PUT /prayer-request
+router.put('/prayer-request', PrayerRequestController.updatePrayerRequest);
 
 // DELETE /prayer-requests/:prayerRequestId
 router.delete('/prayer-requests/:prayerRequestId', PrayerRequestController.deletePrayerRequest);

@@ -11,6 +11,10 @@ export const readPrayerRequestCommentById = async (prayerRequestCommentId: numbe
     return execute<PrayerRequestComment[]>(prayerRequestCommentsQueries.readPrayerRequestCommentById, [prayerRequestCommentId]);
 };
 
+export const readPrayerRequestCommentsByPrayerRequestId = async (prayerRequestId: number) => {
+    return execute<PrayerRequestComment[]>(prayerRequestCommentsQueries.readPrayerRequestCommentsByPrayerRequestId, [prayerRequestId]);
+};
+
 export const createPrayerRequestComment = async (prayerRequestComment: PrayerRequestComment) => {
     return execute<OkPacket>(prayerRequestCommentsQueries.createPrayerRequestComment, 
         [prayerRequestComment.prayerRequestId, prayerRequestComment.userId, prayerRequestComment.text, prayerRequestComment.createdAt]);

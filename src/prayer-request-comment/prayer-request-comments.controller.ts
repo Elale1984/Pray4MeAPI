@@ -28,6 +28,29 @@ export const readPrayerRequestComments: RequestHandler = async (req: Request, re
     }
 };
 
+// get the prayer requests comments for a specific prayer request by prayer request id
+export const readPrayerRequestCommentsByPrayerRequestId: RequestHandler = async (req: Request, res: Response) => {
+    console.log("Trying to read prayer request comments");
+    try {
+        let prayerRequestComments;
+        let prayerRequestId = parseInt(req.query.prayerRequestId as string);
+
+        console.log('prayerRequestId', prayerRequestId);
+
+        console.log('prayerRequestId is a number');
+        prayerRequestComments = await PrayerRequestCommentsDao.readPrayerRequestCommentsByPrayerRequestId(prayerRequestId);
+
+        res.status(200).json(
+            prayerRequestComments
+        );
+    } catch (error) {
+        console.log("error");
+        console.error('[prayer-request-comments.controller][readPrayerRequestCommentsByPrayerRequestId][Error] ', error);
+        res.status(500).json({
+            message: 'There was an error when fetching prayerRequestCommentsById'
+        });
+    }
+}
 export const createPrayerRequestComment: RequestHandler = async (req: Request, res: Response) => {
     try {
         const okPacket: OkPacket = await PrayerRequestCommentsDao.createPrayerRequestComment(req.body);
