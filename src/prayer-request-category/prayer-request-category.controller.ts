@@ -28,6 +28,8 @@ export const readPrayerRequestCategory: RequestHandler = async (req: Request, re
 
 
 export const createPrayerRequestCategory: RequestHandler = async (req: Request, res: Response) => {
+
+    console.log('Attempting to create -> prayerRequestCategory-RequestBody', req.body );
     try {
         const okPacket: OkPacket = await PrayerRequestCategoryDao.createPrayerRequestCategory(req.body);
         console.log('req.body', req.body);
@@ -39,7 +41,7 @@ export const createPrayerRequestCategory: RequestHandler = async (req: Request, 
     } catch (error) {
         console.error('[prayerRequestCategory.controller][createPrayerRequestCategory][Error] ', error);
         res.status(500).json({
-            message: 'There was an error when writing new analytics'
+            message: 'There was an error when writing new prayer-request-category'
         });
     }
   };
